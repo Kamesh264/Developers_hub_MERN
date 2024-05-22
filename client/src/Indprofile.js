@@ -1,0 +1,82 @@
+import React, { useEffect, useState } from 'react';
+import {Route, Link, useParams} from 'react-router-dom';
+import axios from 'axios';
+
+const Indprofile = ({match}) => {
+    const params = useParams();
+
+    const [rating, setRating] = useState(null);
+    const [taskprovider,setTaskprovider] = useState(null);
+
+    const submitHandler = e =>{
+        axios.get('http://localhost:5000/myprofile',{
+            headers: {
+                'x-token' : localStorage.getItem('token')
+            }
+        }).then(res => setTaskprovider(res.data.fullname) )
+
+        let review = {
+            taskprovider,
+            taskworker : params.id,
+            rating,
+        }
+        axios.post('http://localhost:5000/addreview',review,{
+            headers: {
+                'x-token' : localStorage.getItem('token')
+            }
+        }).then(res => alert(res.data) )
+    }
+
+    return(
+        <div>
+            <section id="header">
+                <h1><Link to="/"><i className="fas fa-code"></i> Developers Hub</Link> </h1>
+                <div>
+                    <ul id='navbar'>
+                        <li><Link to="/myprofile">My Profile</Link></li>
+                        <li><Link to="/login">Logout</Link></li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section className="section-container">
+                <Link to="/dashboard" className="myprof-back">Back To Profiles</Link>
+                <div className="myprof-container">
+                    <div className="myprof-top">
+                        <img
+                        className="round-img my-1"
+                        src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y6s=200"
+                        alt=""/>
+                        <h1 className="myprof-large">{params.fullname}</h1>
+                        <p className="myprof-lead">{params.email}</p>
+                        <p>India</p>
+                    </div>
+                    <div className="profile-github">
+                        <h2 className="text-primary my-1">
+                        <i className="fab fa-github"></i> Reviews and Ratings
+                        </h2>
+                        
+                        <div className="add-review">
+                            <div>
+                                <h4>Enter your reviews</h4>
+                                <form className="form" autocomplete="off" onSubmit={submitHandler}> 
+                                <div className="form-group">
+                                    <input
+                                    type="text"
+                                    placeholder="Enter your rating out of 5" name="rating"
+                                    onChange={e => setRating(e.target.value)}
+                                    required='true' />
+                                </div>
+                                <input type="submit" className="add-rating" value="Add Rating" /> 
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </section>
+            
+        </div>
+    )
+}
+
+export default Indprofile

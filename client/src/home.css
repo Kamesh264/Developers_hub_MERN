@@ -1,0 +1,78 @@
+#header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px;
+    background:  #74BDCB;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+  }
+  
+  #header h1 a{
+    font-size: 45px;
+    text-decoration: none;
+  }
+  
+  #navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #navbar li{
+    list-style: none;
+    padding-right: 20px;
+    position: relative;
+  }
+  
+  #navbar li a{
+    text-decoration: none;
+    font-size: 26px;
+    font-weight: 600;
+    color: #1a1a1a;
+    display: flex-end;
+    transition: 0.3s ease;
+  }
+  
+  
+   /* Home Page */
+  
+  .home-dark-overlay{
+    margin: 50px 30px 15px 30px;
+    height: 500px;
+    outline: 1px solid black;
+    position: relative;
+    background-color: #00DBDE;
+    background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
+  
+  
+  }
+  
+  Link{
+    text-decoration: none;
+  }
+  
+  .x-large{
+    color: white;
+    top:32%;
+    left: 35%;
+    font-size: 350%;
+    font-weight: 600;
+    position: absolute;
+    
+  }
+  
+  .home-lead{
+    position: absolute;
+    color: white;
+    font-size: 130%;
+    font-weight: 400;
+    top:50%;
+    left: 24%;
+  }
+  
+  .btn-primary Link{
+    position: absolute;
+    top: 60%;
+    left: 70%;
+  }
+  
