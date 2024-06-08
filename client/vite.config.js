@@ -1,25 +1,21 @@
-// vite.config.js
-const path = require('path')
-const { defineConfig } = require('vite')
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
-module.exports = defineConfig({
-  build: {
-    lib: {
-      entry: path.resolve(__dirname, 'client\build\index.html'),
-      name: 'MyLib',
-      fileName: (format) => `my-lib.${format}.js`
+// https://vitejs.dev/config/
+export default defineConfig({
+  esbuild: {
+    loader: 'jsx',
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      loader: {
+        '.js': 'jsx',
+      },
     },
-    rollupOptions: {
-      // make sure to externalize deps that shouldn't be bundled
-      // into your library
-      external: ['vue'],
-      output: {
-        // Provide global variables to use in the UMD build
-        // for externalized deps
-        globals: {
-          vue: 'Vue'
-        }
-      }
-    }
-  }
-})
+  },
+  plugins: [react()],
+  server: {
+    host: "127.0.0.1",
+    port: 3000,
+  },
+});

@@ -2,9 +2,10 @@
   "name": "developer-hub---copy",
   "version": "1.0.0",
   "description": "",
-  "main": "devusermodel.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server",
+    "dev": "vite",
     "build" : "vite build",
     "server": "nodemon server",
     "client": "npm start --prefix client",
