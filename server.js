@@ -28,9 +28,9 @@ app.use(cors({origin:"*"}));
 // app.get('/', (req,res) => {
 //     return res.send('Hello World !')
 // })
-app.use(express.static(path.join(__dirname, 'build'))); // Assuming your build output is in the 'build' directory
+app.use(express.static(path.join(__dirname, 'public'))); // Assuming your build output is in the 'build' directory
 
-app.get('*', (req, res) => res.sendFile(path.join(__dirname, './client/build/index.html')));
+app.get('*', (req, res) => res.sendFile(path.join(__dirname, './client/public/index.html')));
 
 
 app.post('/register', async (req, res) => {
