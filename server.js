@@ -30,7 +30,7 @@ app.use(cors({origin:"*"}));
 // })
 app.use(express.static(path.join(__dirname, 'build'))); // Assuming your build output is in the 'build' directory
 
-app.get('*', (req, res) => res.sendFile(path.join(__dirname, './client/src/Home.js')));
+app.get('*', (req, res) => res.sendFile(path.join(__dirname, './client/build/index.html')));
 
 
 app.post('/register', async (req, res) => {
