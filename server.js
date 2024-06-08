@@ -122,4 +122,4 @@ app.get('/myreview',middleware,async(req,res) => {
     }
 })
 
-app.listen('https://developers-hub-mern-1.onrender.com', ()=> console.log('Server running..'))
+app.listen('devhub.com', ()=> console.log('Server running..'))
