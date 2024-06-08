@@ -9,7 +9,7 @@ const app = express();
 const port = process.env.PORT || 4000;
 
 const path = require('path')
-console.log(__dirname)
+
 
 mongoose.connect('mongodb+srv://shiva:shiva@cluster0.c5sbebr.mongodb.net/', {
     useNewUrlParser: true,
@@ -18,12 +18,19 @@ mongoose.connect('mongodb+srv://shiva:shiva@cluster0.c5sbebr.mongodb.net/', {
     () => console.log('DB Connected..')
 )
 
+
+
+
+
 app.use(express.json());
 app.use(cors({origin:"*"}));
 
 // app.get('/', (req,res) => {
 //     return res.send('Hello World !')
 // })
+app.use(express.static(path.join(__dirname, 'build'))); // Assuming your build output is in the 'build' directory
+
+app.get('*', (req, res) => res.sendFile(path.join(__dirname, './client/src/Home.js')));
 
 
 app.post('/register', async (req, res) => {
