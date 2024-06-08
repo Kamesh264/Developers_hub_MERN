@@ -123,4 +123,4 @@ app.get('/myreview',middleware,async(req,res) => {
     }
 })
 
-app.listen(port, ()=> console.log('Server running..'))
+app.listen(port, ()=> console.log(`Example app listening on port ${port}`))
