@@ -8,6 +8,9 @@ const cors = require('cors')
 const app = express();
 const port = process.env.PORT || 4000;
 
+const path = require('path')
+console.log(__dirname)
+
 mongoose.connect('mongodb+srv://shiva:shiva@cluster0.c5sbebr.mongodb.net/', {
     useNewUrlParser: true,
     useUnifiedTopology: true
