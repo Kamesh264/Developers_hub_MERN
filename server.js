@@ -6,6 +6,7 @@ const middleware = require('./middleware');
 const reviewmodel = require('./reviewmodel');
 const cors = require('cors')
 const app = express();
+const port = process.env.PORT || 4000;
 
 mongoose.connect('mongodb+srv://shiva:shiva@cluster0.c5sbebr.mongodb.net/', {
     useNewUrlParser: true,
@@ -122,4 +123,4 @@ app.get('/myreview',middleware,async(req,res) => {
     }
 })
 
-app.listen(5000, ()=> console.log('Server running..'))
+app.listen(port, ()=> console.log('Server running..'))
