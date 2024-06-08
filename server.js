@@ -18,9 +18,9 @@ mongoose.connect('mongodb+srv://shiva:shiva@cluster0.c5sbebr.mongodb.net/', {
 app.use(express.json());
 app.use(cors({origin:"*"}));
 
-app.get('/', (req,res) => {
-    return res.send('Hello World !')
-})
+// app.get('/', (req,res) => {
+//     return res.send('Hello World !')
+// })
 
 
 app.post('/register', async (req, res) => {
