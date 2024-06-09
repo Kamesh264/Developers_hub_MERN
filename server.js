@@ -22,11 +22,11 @@ mongoose.connect('mongodb+srv://shiva:shiva@cluster0.c5sbebr.mongodb.net/', {
 app.use(express.json());
 app.use(cors({origin:"*"}));
 
-app.use(express.static(path.resolve(__dirname, "public")));
+app.use(express.static(path.resolve(__dirname, "build")));
 
 // app.use("/api", indexRouter);
 app.get("*", (req, res) => {
-  res.sendFile("public/index.html", { root: __dirname });
+  res.sendFile("client/build/index.html", { root: __dirname });
 });
 
 
