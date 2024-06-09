@@ -25,8 +25,8 @@ app.use(cors({origin:"*"}));
 app.use(express.static(path.resolve(__dirname, "build")));
 
 // app.use("/api", indexRouter);
-app.get("*", (req, res) => {
-  res.sendFile("client/build/index.html", { root: __dirname });
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, "build/index.html"));
 });
 
 
