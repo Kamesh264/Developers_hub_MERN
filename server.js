@@ -30,6 +30,15 @@ app.get('*', (req, res) => {
 });
 
 
+const corsOptions ={
+   origin:'*', 
+   credentials:true,            //access-control-allow-credentials:true
+   optionSuccessStatus:200,
+}
+
+app.use(cors(corsOptions))
+
+
 // app.get('/', (req,res) => {
 //     return res.send('Hello World !')
 // })
