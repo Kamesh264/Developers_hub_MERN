@@ -27,7 +27,7 @@ function Register(){
             e.preventDefault();
             
             
-            const registrationURL = 'http://localhost:5000/register';
+            const registrationURL = 'https://dancing-sunshine-62bbee.netlify.app/register';
           
             axios.post(registrationURL, data)
               .then(response => {
