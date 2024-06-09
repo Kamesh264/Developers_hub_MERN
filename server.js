@@ -24,7 +24,7 @@ app.use(cors({origin:"*"}));
 
 app.use(express.static(path.resolve(__dirname, "public")));
 
-app.use("/api", indexRouter);
+// app.use("/api", indexRouter);
 app.get("*", (req, res) => {
   res.sendFile("public/index.html", { root: __dirname });
 });
