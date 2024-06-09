@@ -20,7 +20,7 @@ const Indprofile = ({match}) => {
             taskworker : params.id,
             rating,
         }
-        axios.post('https://dancing-sunshine-62bbee.netlify.app//addreview',review,{
+        axios.post('https://dancing-sunshine-62bbee.netlify.app/addreview',review,{
             headers: {
                 'x-token' : localStorage.getItem('token')
             }

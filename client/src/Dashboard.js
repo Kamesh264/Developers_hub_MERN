@@ -7,7 +7,7 @@ import axios from 'axios';
 const Dashboard = () => {
     const [data,setData] = useState([]);
     useEffect(() => {
-        axios.get('https://dancing-sunshine-62bbee.netlify.app//allprofiles', {
+        axios.get('https://dancing-sunshine-62bbee.netlify.app/allprofiles', {
             headers : {
                 'x-token' : localStorage.getItem('token')
             }
