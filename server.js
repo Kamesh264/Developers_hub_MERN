@@ -19,18 +19,21 @@ mongoose.connect('mongodb+srv://shiva:shiva@cluster0.c5sbebr.mongodb.net/', {
 )
 
 
-
-
-
 app.use(express.json());
-// app.use(cors({origin:"*"}));
+app.use(cors({origin:"*"}));
+
+app.use(express.static(path.resolve(__dirname, "public")));
+
+app.use("/api", indexRouter);
+app.get("*", (req, res) => {
+  res.sendFile("public/index.html", { root: __dirname });
+});
+
 
 // app.get('/', (req,res) => {
 //     return res.send('Hello World !')
 // })
-app.use(express.static(path.join(__dirname, 'build'))); // Assuming your build output is in the 'build' directory
 
-app.get('*', (req, res) => res.sendFile(path.join(__dirname, './client/build/index.html')));
 
 
 app.post('/register', async (req, res) => {
