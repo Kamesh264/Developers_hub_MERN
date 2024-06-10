@@ -30,7 +30,7 @@ app.get('*', (req, res) => {
 });
 
 
-const cors = require('cors');
+
 app.use(cors({
     origin: 'https://dancing-sunshine-62bbee.netlify.app/', // use your actual domain name (or localhost), using * is not recommended
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
