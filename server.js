@@ -26,7 +26,7 @@ app.use(express.static(path.resolve(__dirname, "build")));
 
 // app.use("/api", indexRouter);
 app.use(cors({
-    origin: 'https://dancing-sunshine-62bbee.netlify.app/', // use your actual domain name (or localhost), using * is not recommended
+    origin: 'https://devhubmern.onrender.com/login/', // use your actual domain name (or localhost), using * is not recommended
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
     credentials: true
@@ -35,7 +35,7 @@ app.use(cors({
 app.use((req, res, next) => {
     res.setHeader(
       "Access-Control-Allow-Origin",
-      "https://dancing-sunshine-62bbee.netlify.app/"
+      "https://devhubmern.onrender.com/login/"
     );
     res.setHeader(
       "Access-Control-Allow-Methods",
