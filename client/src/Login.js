@@ -22,7 +22,7 @@ const Login=()=>{
             )
         }
     if(auth){
-        return <Navigate to="/dashboard" />
+        return <Navigate to="https://devhubmern.onrender.com/dashboard" />
     }
     return (
         <div id='log-all'>

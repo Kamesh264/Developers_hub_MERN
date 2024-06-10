@@ -14,7 +14,7 @@ const Dashboard = () => {
         }).then(res => setData(res.data))
     },[])
     if(!localStorage.getItem('token')){
-        return <Navigate to='/login' />
+        return <Navigate to='https://devhubmern.onrender.com/login' />
     }
     return(
             <div>
