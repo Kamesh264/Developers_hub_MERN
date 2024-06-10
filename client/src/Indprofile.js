@@ -9,7 +9,7 @@ const Indprofile = ({match}) => {
     const [taskprovider,setTaskprovider] = useState(null);
 
     const submitHandler = e =>{
-        axios.get('https://dancing-sunshine-62bbee.netlify.app/myprofile',{
+        axios.get('https://devhubmern.onrender.com/myprofile',{
             headers: {
                 'x-token' : localStorage.getItem('token')
             }
@@ -20,7 +20,7 @@ const Indprofile = ({match}) => {
             taskworker : params.id,
             rating,
         }
-        axios.post('https://dancing-sunshine-62bbee.netlify.app/addreview',review,{
+        axios.post('https://devhubmern.onrender.com/addreview',review,{
             headers: {
                 'x-token' : localStorage.getItem('token')
             }

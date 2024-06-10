@@ -6,12 +6,12 @@ const MyProfile = () => {
     const [data,setData] = useState(null);
     const [review,setReview] = useState([])
     useEffect(() => {
-        axios.get('https://dancing-sunshine-62bbee.netlify.app/myprofile', {
+        axios.get('https://devhubmern.onrender.com/myprofile', {
             headers : {
                 'x-token' : localStorage.getItem('token')
             }
         }).then(res => setData(res.data))
-        axios.get('https://dancing-sunshine-62bbee.netlify.app/myreview', {
+        axios.get('https://devhubmern.onrender.com/myreview', {
             headers : {
                 'x-token' : localStorage.getItem('token')
             }

@@ -15,7 +15,7 @@ const Login=()=>{
         }
     const submitHamdler = e => {
             e.preventDefault();
-            axios.post('https://dancing-sunshine-62bbee.netlify.app/login',data).then(
+            axios.post('https://devhubmern.onrender.com/login',data).then(
                 // res => console.log(res.data)
                 res => {localStorage.setItem('token',res.data.token);
                 setAuth(true)}
