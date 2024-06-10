@@ -20,17 +20,11 @@ mongoose.connect('mongodb+srv://shiva:shiva@cluster0.c5sbebr.mongodb.net/', {
 
 
 app.use(express.json());
-app.use(cors({origin:"*"}));
+// app.use(cors({origin:"*"}));
 
 app.use(express.static(path.resolve(__dirname, "build")));
 
 // app.use("/api", indexRouter);
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, "build/index.html"));
-});
-
-
-
 app.use(cors({
     origin: 'https://dancing-sunshine-62bbee.netlify.app/', // use your actual domain name (or localhost), using * is not recommended
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
@@ -58,6 +52,15 @@ app.use((req, res, next) => {
   
     next();
   });
+
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, "build/index.html"));
+});
+
+
+
+
 
 
 
